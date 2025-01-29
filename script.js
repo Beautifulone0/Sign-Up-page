@@ -1,34 +1,67 @@
 const form = document.querySelector("form");
+const firstName = document.getElementById("firstname");
+const lastName = document.getElementById("lastname");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+const confirmPassword = document.getElementById("confirm_password");
+const dob = document.getElementById("dob");
+const termsCheckbox = document.getElementById("terms_conditions");
 
 form.addEventListener("submit", function (event) {
-    event.preventDefault(); // Stop form submission
+    event.preventDefault(); 
 
-    // Get input values
-    const firstName = document.getElementById("firstname").value.trim();
-    const lastName = document.getElementById("lastname").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-    const confirmPassword = document.getElementById("confirm_password").value.trim();
-    const dob = document.getElementById("dob").value.trim();
-    const termsChecked = document.getElementById("terms_conditions").checked;
+    document.querySelectorAll(".error").forEach(el => el.remove());
 
-    // Error message container
-    let errorMessage = "";
-    
-    // Validate input
-    if (firstName === "") errorMessage += "First name is required.\n";
-    if (lastName === "") errorMessage += "Last name is required.\n";
-    if (email === "" || !email.includes("@")) errorMessage += "Enter a valid email.\n";
-    if (dob === "") errorMessage += "Date of birth is required.\n";
-    if (password.length < 6) errorMessage += "Password must be at least 6 characters long.\n";
-    if (password !== confirmPassword) errorMessage += "Passwords do not match.\n";
-    if (!termsChecked) errorMessage += "You must agree to the Terms & Conditions.\n";
+    let isValid = true;
 
-    // Show error message or submit form
-    if (errorMessage) {
-        alert(errorMessage);
-    } else {
+    function showError(input, message) {
+        isValid = false;
+        const error = document.createElement("p");
+        error.className = "error";
+        error.style.color = "red";
+        error.style.fontSize = "0.8em";
+        error.innerText = message;
+        input.parentElement.appendChild(error);
+    }
+
+    // Validation 
+    if (firstName.value.trim() === "") {
+        showError(firstName, "First name is required.");
+    }
+
+    if (lastName.value.trim() === "") {
+        showError(lastName, "Last name is required.");
+    }
+
+    if (email.value.trim() === "") {
+        showError(email, "Email is required.");
+    } else if (!/^\S+@\S+\.\S+$/.test(email.value)) {
+        showError(email, "Enter a valid email address.");
+    }
+
+    if (dob.value === "") {
+        showError(dob, "Date of birth is required.");
+    }
+
+    if (password.value.trim() === "") {
+        showError(password, "Password is required.");
+    } else if (password.value.length < 6) {
+        showError(password, "Password must be at least 6 characters long.");
+    }
+
+    if (confirmPassword.value.trim() === "") {
+        showError(confirmPassword, "Please confirm your password.");
+    } else if (password.value !== confirmPassword.value) {
+        showError(confirmPassword, "Passwords do not match.");
+    }
+
+    if (!termsCheckbox.checked) {
+        showError(termsCheckbox, "You must agree to the Terms & Conditions.");
+    }
+
+    // Submit the form if valid
+    if (isValid) {
         alert("Form submitted successfully!");
-        form.submit(); 
+        form.submit();
     }
 });
