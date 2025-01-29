@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Poppins", serif;
+}
+.container{
+    width: 90%;
+    height: auto;
+    margin: 50px auto;
+    background: hsl(0, 0%, 100%); 
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+    border: 10px;
+    display: flex;
+    align-items: start;
+}
+.img-ctn{
+  background: linear-gradient(324.93deg, #007AFF 0.74%, #0F70DA 100%);
+  width: 60%;
+  height: 100%;
+  padding: 50px;
+}
+.img-ctn h1{
+    font-size: 1.2em;
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+    line-height: 2;
+}
+.imgs{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.form-ctn{
+    width: 80%;
+    padding: 50px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo img {
+    width: 30px;
+    height: auto;
+}
+.logo h1{
+    font-size: 0.9em;
+}
+.header{
+    margin: 20px;
+}
+.header h1{
+    font-size: 1.3em;
+    font-weight: 500;
+}
+.header p{
+    font-size: 0.8em;
+    font-weight: 500;
+    color: hsl(218, 23%, 23%);
+}
+.form {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+.formflex{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+.first-last{
+    margin-top: 10px;
+}
+.first-last label{
+    font-size: 0.7em;
+    color: hsl(218, 23%, 23%);
+    font-weight: 500;
+
+}
+.first-last input {
+    width: 100%; 
+    max-width: 300px; 
+    padding: 3px; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    border: 0.71px solid hsl(0, 0%, 82%);
+    outline: none; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+.remberme-forgotpass{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.remberme-forgotpass label{
+    font-size: 0.7em;
+    color: hsl(218, 23%, 23%);
+    font-weight: 500;
+}
+.remberme-forgotpass a{
+    color: #007AFF;
+    text-decoration: none;
+    font-size: 0.7em;
+    font-weight: 500;
+}
+.t-c{
+    font-size: 0.7em;
+    color: hsl(218, 23%, 23%);
+    font-weight: 500;
+}
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.buttons button{
+    background: #007AFF;
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 70px;
+    margin-right: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-align: center;
+}
+.buttons .b2{
+    background: #2D3748;
+    color: hsl(0, 0%, 100%);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 60px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.b2{
+    position: relative;
+}
+.b2 img{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+}
+.dnt{
+    text-align: center;
+    font-size: 0.7em;
+    color: hsl(218, 23%, 23%);
+    font-weight: 500;
+    margin-top: 10px;
+}
+.dnt span{
+    color: #007AFF;
+}
+.f-img{
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+}
